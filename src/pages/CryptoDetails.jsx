@@ -7,6 +7,7 @@ import { useGetCryptosDetailsQuery, useGetCryptosHistoryQuery } from '../redux/s
 import { useState } from 'react';
 import { Col, Select } from 'antd';
 import LineChart from '../component/LineChart';
+import Loader from "../component/Loader";
 import Footer from '../component/Footer';
 
 const CryptoDetails = () => {
@@ -93,7 +94,7 @@ const CryptoDetails = () => {
     },
   ];
 
-  if(isFetching) return "Loading..."
+  if(isFetching) return <Loader />;
   return (
     <>
       <div className='flex flex-col bg-slate-100 dark:bg-slate-800 min-h-[100vh] w-full'>
